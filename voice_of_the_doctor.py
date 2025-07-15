@@ -39,7 +39,7 @@ def text_to_speech(text, output_filepath_mp3, output_filepath_wav):
         else:
             raise OSError("Unsupported Operating System")
     except Exception as e:
-        print(f"An error occured while trying to play the audio : {e}")
+        return(f"An error occured while trying to play the audio : {e}")
 
-input_text="Hi this is AI with Girban!"
-text_to_speech(text=input_text, output_filepath_mp3="gtts_test.mp3", output_filepath_wav="gtts_test.wav")
+# input_text="Hi this is AI with Girban!"
+# text_to_speech(text=input_text, output_filepath_mp3="gtts_test.mp3", output_filepath_wav="gtts_test.wav")

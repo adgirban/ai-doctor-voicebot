@@ -37,12 +37,14 @@ def record_audio(file_path, timeout=20, phrase_time_limit=None):
 file_path="test.mp3"
 # record_audio(file_path)
 
-client=Groq(api_key=GROQ_API_KEY)
 model="whisper-large-v3"
-audio_file=open(file_path, "rb")
-transcription=client.audio.transcriptions.create(
-    model=model,
-    file=audio_file,
-    language='en'
-)
-print(transcription.text)
+
+def transcribe(model, file_path, GROQ_API_KEY=os.environ.get("GROQ_API_KEY")):
+    client=Groq(api_key=GROQ_API_KEY)
+    audio_file=open(file_path, "rb")
+    transcription=client.audio.transcriptions.create(
+        model=model,
+        file=audio_file,
+        language='en'
+    )
+    return transcription.text
