@@ -39,4 +39,4 @@ interface=gr.Interface(
     ],
     title="AI Doctor with Vision and Voice",
 )
-interface.launch(debug=True)
+interface.launch(server_name="0.0.0.0", server_port=7860, debug=True)
